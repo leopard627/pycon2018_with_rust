@@ -1,0 +1,12 @@
+[package]
+name = "pyrust-proof-example"
+version = "0.1.0"
+authors = ["elastic7327 <elastic7327@gmail.com>"]
+
+[lib]
+name = "example"
+crate-type = ["dylib"]
+
+[dependencies]
+cpython = {git = "https://github.com/dgrunwald/rust-cpython.git"}
+rust-crypto = "^0.2"
