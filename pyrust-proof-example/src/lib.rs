@@ -16,7 +16,7 @@ pub fn valid_proof(mut hasher: Sha256, last_proof: u32, proof: u32, diff: usize)
     &output[..diff] == "0".repeat(diff)
 }
 
-fn example(_py: Python, diff: u32) -> PyResult<u32>{
+fn proofs(_py: Python, diff: u32) -> PyResult<u32>{
 
     let mut proof = 0;
     let hasher = Sha256::new();
@@ -29,14 +29,14 @@ fn example(_py: Python, diff: u32) -> PyResult<u32>{
     Ok(proof)
 }
 
-py_module_initializer!(while_with_sha, initexample, PyInit_example, |py, m| {
-    m.add(py, "example", py_fn!(py, example(diff: u32)))?;
+py_module_initializer!(pycon2018_proofs, initproofs, PyInit_proofs, |py, m| {
+    m.add(py, "proofs", py_fn!(py, proofs(diff: u32)))?;
     Ok(())
 });
 
 
 #[test]
-fn test_simple_pychain() {
+fn test_simple_pychain_proofs() {
 
     let mut proof = 0;
     let hasher = Sha256::new();
