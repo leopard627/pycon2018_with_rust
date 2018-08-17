@@ -9,7 +9,6 @@ Description: for pycon2018
 
 import pytest
 import proofs # rust implemented!
-
 from hashlib import sha256
 
 
@@ -20,9 +19,7 @@ def valid_proof(last_proof, proof, difficulty):
 
 
 def simple_proof_job(difficulty):
-
     proof = 0
-
     while (valid_proof(0, proof, difficulty) == False):
         proof += 1
 
