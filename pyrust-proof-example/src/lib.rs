@@ -13,8 +13,6 @@ pub fn valid_proof(mut hasher: Sha256, last_proof: u32, proof: u32, diff: usize)
     let guess = &format!("{}{}", last_proof, proof);
     hasher.input_str(guess);
     let output = hasher.result_str();
-    println!("{}", output);
-
     &output[..diff] == "0".repeat(diff)
 }
 

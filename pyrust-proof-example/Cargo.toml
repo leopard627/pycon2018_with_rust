@@ -10,3 +10,9 @@ crate-type = ["dylib"]
 [dependencies]
 cpython = {git = "https://github.com/dgrunwald/rust-cpython.git"}
 rust-crypto = "^0.2"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
