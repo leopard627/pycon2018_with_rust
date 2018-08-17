@@ -1,6 +1,6 @@
 import string
 import random
-
+import doubles
 
 # Python ZIP version
 def count_doubles(val):
@@ -19,3 +19,5 @@ def test_pure_python(benchmark):
     benchmark(count_doubles, val)
 
 
+def test_rust(benchmark):   #  <-- Benchmark the Rust version
+    benchmark(doubles.count_doubles, val)

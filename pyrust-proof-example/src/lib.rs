@@ -30,6 +30,7 @@ fn proofs(_py: Python, diff: u32) -> PyResult<u32>{
 }
 
 py_module_initializer!(pycon2018_proofs, initproofs, PyInit_proofs, |py, m| {
+    try!(m.add(py, "__doc__", "파이콘 만세 ~ 러스트 만세!"));
     m.add(py, "proofs", py_fn!(py, proofs(diff: u32)))?;
     Ok(())
 });
