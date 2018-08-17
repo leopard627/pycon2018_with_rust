@@ -28,8 +28,8 @@ def simple_proof_job(difficulty):
 
 
 def test_rust_implemented_proof_job_benchmark(benchmark):
-    benchmark(example.example, 5)
+    benchmark(example.example, 6)
 
 
 def test_pure_python_proof_job(benchmark):
-    benchmark(simple_proof_job, 5)
+    benchmark(simple_proof_job, 6)
